@@ -1,0 +1,809 @@
+/* =========================================
+   BASIC RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff7fa 0%,
+            #ffe9f0 45%,
+            #f9dce6 100%
+        );
+
+    color: #59303e;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+.page {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s ease;
+
+    overflow-y: auto;
+}
+
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content {
+    width: min(900px, 100%);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+.top-line {
+    font-size: 1.1rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+
+h1 {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+
+    line-height: 1;
+
+    color: #b95070;
+
+    text-shadow:
+        0 5px 20px rgba(185, 80, 112, 0.15);
+}
+
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    color: #b95070;
+
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    font-size: 1.3rem;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+
+/* =========================================
+   PHOTO FRAME
+   ========================================= */
+
+.photo-frame {
+    width: min(300px, 70vw);
+
+    height: min(330px, 42vh);
+
+    background: white;
+
+    padding: 10px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(117, 48, 72, 0.18);
+
+    transform: rotate(-2deg);
+
+    overflow: hidden;
+}
+
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+}
+
+
+/* =========================================
+   MEMORY FRAME
+   ========================================= */
+
+.memory-frame {
+    width: min(380px, 75vw);
+
+    height: min(400px, 48vh);
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(117, 48, 72, 0.18);
+
+    transform: rotate(1.5deg);
+
+    overflow: hidden;
+}
+
+
+.memory-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    display: block;
+}
+
+
+/* =========================================
+   PHOTO GRID
+   ========================================= */
+
+.photo-grid {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    flex-wrap: wrap;
+}
+
+
+.small-photo {
+    width: min(190px, 27vw);
+
+    height: 230px;
+
+    padding: 8px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 35px rgba(117, 48, 72, 0.16);
+
+    overflow: hidden;
+}
+
+
+.small-photo:nth-child(1) {
+    transform: rotate(-4deg);
+}
+
+
+.small-photo:nth-child(2) {
+    transform: translateY(-10px);
+}
+
+
+.small-photo:nth-child(3) {
+    transform: rotate(4deg);
+}
+
+
+.small-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    display: block;
+}
+
+
+/* =========================================
+   MAGIC BUTTON
+   ========================================= */
+
+.magic-button {
+    border: none;
+
+    background: white;
+
+    color: #b95070;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.1rem;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(117, 48, 72, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    margin-top: 5px;
+}
+
+
+.magic-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 18px 40px rgba(117, 48, 72, 0.22);
+}
+
+
+.magic-button:active {
+    transform: scale(0.96);
+}
+
+
+.secondary-button {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+   ========================================= */
+
+.music-button {
+    position: fixed;
+
+    top: 22px;
+    right: 25px;
+
+    z-index: 1000;
+
+    width: 52px;
+    height: 52px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(117, 48, 72, 0.18);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+
+.music-button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================
+   MESSAGE CARD
+   ========================================= */
+
+.message-card {
+    width: min(650px, 90vw);
+
+    background: rgba(255, 255, 255, 0.82);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(117, 48, 72, 0.12);
+
+    line-height: 1.8;
+
+    font-size: 1.15rem;
+}
+
+
+.message-card p + p {
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   EMOJIS
+   ========================================= */
+
+.big-emoji {
+    font-size: 4.5rem;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+.cute-character {
+    font-size: 5rem;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+.heart-animation {
+    font-size: 5rem;
+
+    animation:
+        heartPulse 1.5s ease-in-out infinite;
+}
+
+
+.stars {
+    font-size: 2rem;
+
+    letter-spacing: 10px;
+
+    animation:
+        sparkle 2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   GIFT
+   ========================================= */
+
+.gift-box {
+    position: relative;
+
+    width: 190px;
+    height: 180px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.gift-box:hover {
+    transform:
+        translateY(-8px)
+        scale(1.05);
+}
+
+
+.gift-body {
+    width: 170px;
+    height: 125px;
+
+    background: #e86f91;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 4rem;
+
+    box-shadow:
+        0 18px 35px rgba(117, 48, 72, 0.2);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.gift-lid {
+    position: absolute;
+
+    top: 15px;
+
+    width: 185px;
+    height: 55px;
+
+    background: #d95b80;
+
+    border-radius: 10px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.gift-box.open .gift-lid {
+    transform:
+        translateY(-75px)
+        rotate(-8deg);
+}
+
+
+.gift-hint {
+    font-size: 1.1rem;
+
+    animation:
+        hintPulse 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CELEBRATION
+   ========================================= */
+
+.celebration h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+
+.confetti-title {
+    font-size: 3rem;
+
+    animation:
+        floating 2s ease-in-out infinite;
+}
+
+
+.cake {
+    font-size: 5rem;
+
+    animation:
+        floating 2.5s ease-in-out infinite;
+}
+
+
+.birthday-message {
+    font-size: 1.3rem;
+
+    max-width: 650px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FINAL PAGE
+   ========================================= */
+
+.final-heart {
+    font-size: 5rem;
+
+    animation:
+        heartPulse 1.6s ease-in-out infinite;
+}
+
+
+.final-photo {
+    width: min(300px, 65vw);
+
+    height: min(350px, 42vh);
+
+    background: white;
+
+    padding: 10px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(117, 48, 72, 0.2);
+
+    overflow: hidden;
+}
+
+
+.final-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
+}
+
+
+.final-message {
+    font-size: 1.5rem;
+
+    color: #b95070;
+}
+
+
+.small-final-message {
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   SPARKLES
+   ========================================= */
+
+.sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 2000;
+
+    font-size: 1.3rem;
+
+    animation:
+        sparkleMove 1s ease-out forwards;
+}
+
+
+/* =========================================
+   CONFETTI
+   ========================================= */
+
+.confetti {
+    position: fixed;
+
+    top: -30px;
+
+    pointer-events: none;
+
+    z-index: 3000;
+
+    font-size: 1.5rem;
+
+    animation:
+        confettiFall 3s linear forwards;
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes hintPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes sparkleMove {
+
+    0% {
+        opacity: 1;
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(
+                var(--move-x),
+                var(--move-y)
+            )
+            scale(0.3);
+    }
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px;
+    }
+
+    .subtitle {
+        font-size: 1.05rem;
+    }
+
+    .magic-button {
+        font-size: 1rem;
+
+        padding:
+            15px 23px;
+    }
+
+    .photo-frame {
+        width: 240px;
+        height: 270px;
+    }
+
+    .memory-frame {
+        width: 280px;
+        height: 310px;
+    }
+
+    .small-photo {
+        width: 28vw;
+        height: 150px;
+    }
+
+    .message-card {
+        padding: 20px;
+
+        font-size: 1rem;
+    }
+
+    .music-button {
+        width: 46px;
+        height: 46px;
+
+        top: 15px;
+        right: 15px;
+    }
+
+    .gift-box {
+        transform: scale(0.9);
+    }
+
+}

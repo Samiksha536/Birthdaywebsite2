@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Birthday Surprise 💗</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================================
+         BACKGROUND MUSIC
+         ========================================= -->
+
+    <audio
+        id="backgroundMusic"
+        loop>
+        <source
+            src="./assests/music.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =========================================
+         MUSIC BUTTON
+         ========================================= -->
+
+    <button
+        id="musicButton"
+        class="music-button"
+        type="button"
+        aria-label="Play or pause music"
+    >
+        🎵
+    </button>
+
+
+    <!-- =========================================
+         SPARKLES
+         ========================================= -->
+
+    <div id="sparkles"></div>
+
+
+    <!-- =========================================
+         PAGE 1
+         ========================================= -->
+
+    <section
+        class="page active"
+        id="page1"
+    >
+
+        <div class="content">
+
+            <p class="top-line">
+                ✨ A little something for you ✨
+            </p>
+
+            <h1>
+                Hey Mahesh... 💗
+            </h1>
+
+            <p class="subtitle">
+                I made something special for you.
+            </p>
+
+            <div class="photo-frame">
+
+                <img
+                    src="./assests/photo1.jpg"
+                    alt="Birthday memory"
+                >
+
+            </div>
+
+            <button
+                class="magic-button"
+                id="startButton"
+                type="button"
+            >
+                💗 Open Your Surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 2
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page2"
+    >
+
+        <div class="content">
+
+            <div class="cute-character">
+                🐰
+            </div>
+
+            <h2>
+                Okay... you're here! 💕
+            </h2>
+
+            <p class="subtitle">
+                But this is just the beginning...
+            </p>
+
+            <div class="heart-animation">
+                💗
+            </div>
+
+            <button
+                class="magic-button"
+                type="button"
+                data-next="3"
+            >
+                ✨ Keep Going...
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 3
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page3"
+    >
+
+        <div class="content">
+
+            <div class="big-emoji">
+                💌
+            </div>
+
+            <h2>
+                A Little Message For You
+            </h2>
+
+            <div class="message-card">
+
+                <p>
+                    Some people make ordinary moments
+                    feel a little more special.
+                </p>
+
+                <p>
+                    I'm really happy that I got to
+                    share so many beautiful moments
+                    with you. 💕
+                </p>
+
+                <p>
+                    I hope your birthday brings you
+                    lots of happiness, laughter and
+                    beautiful memories.
+                </p>
+
+            </div>
+
+            <button
+                class="magic-button"
+                type="button"
+                data-next="4"
+            >
+                💌 Read My Message
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 4
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page4"
+    >
+
+        <div class="content">
+
+            <div class="big-emoji">
+                📸
+            </div>
+
+            <h2>
+                Remember This? 💕
+            </h2>
+
+            <p class="subtitle">
+                A little memory worth keeping.
+            </p>
+
+            <div class="memory-frame">
+
+                <img
+                    src="./assests/photo2.jpg"
+                    alt="Birthday memory"
+                >
+
+            </div>
+
+            <button
+                class="magic-button"
+                type="button"
+                data-next="5"
+            >
+                🌸 One More Memory
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 5
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page5"
+    >
+
+        <div class="content">
+
+            <div class="stars">
+                ✨ ⭐ ✨
+            </div>
+
+            <h2>
+                There's More... 💕
+            </h2>
+
+            <p class="subtitle">
+                Because one memory is never enough.
+            </p>
+
+            <div class="photo-grid">
+
+                <div class="small-photo">
+                    <img
+                        src="./assests/photo3.jpg"
+                        alt="Memory 3"
+                    >
+                </div>
+
+                <div class="small-photo">
+                    <img
+                        src="./assests/photo4.jpg"
+                        alt="Memory 4"
+                    >
+                </div>
+
+                <div class="small-photo">
+                    <img
+                        src="./assests/photo5.jpg"
+                        alt="Memory 5"
+                    >
+                </div>
+
+            </div>
+
+            <button
+                class="magic-button"
+                type="button"
+                data-next="6"
+            >
+                ⭐ There's More...
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 6 — GIFT
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page6"
+    >
+
+        <div class="content">
+
+            <div class="big-emoji">
+                🎁
+            </div>
+
+            <h2>
+                I Have A Gift For You...
+            </h2>
+
+            <p class="subtitle">
+                But you'll have to open it yourself. 💕
+            </p>
+
+            <!-- CLICKABLE GIFT -->
+
+            <div
+                id="giftBox"
+                class="gift-box"
+                role="button"
+                tabindex="0"
+                aria-label="Open the birthday gift"
+            >
+
+                <div class="gift-lid">
+                    🎀
+                </div>
+
+                <div class="gift-body">
+                    🎁
+                </div>
+
+            </div>
+
+            <p
+                id="giftHint"
+                class="gift-hint"
+            >
+                💗 Tap the gift
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 7
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page7"
+    >
+
+        <div class="content celebration">
+
+            <div class="confetti-title">
+                🎉 🎊 🎉
+            </div>
+
+            <h1>
+                HAPPY BIRTHDAY! 🎂
+            </h1>
+
+            <p class="birthday-message">
+                Wishing you a day filled with
+                happiness, laughter and beautiful
+                moments. 💗
+            </p>
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <button
+                class="magic-button"
+                type="button"
+                id="celebrateButton"
+            >
+                🎉 Celebrate!
+            </button>
+
+            <button
+                class="magic-button secondary-button"
+                type="button"
+                data-next="8"
+            >
+                💕 One Last Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PAGE 8 — FINAL
+         ========================================= -->
+
+    <section
+        class="page"
+        id="page8"
+    >
+
+        <div class="content final-page">
+
+            <div class="final-heart">
+                💗
+            </div>
+
+            <h1>
+                Made Especially For You
+            </h1>
+
+            <div class="final-photo">
+
+                <img
+                    src="./assests/photo1.jpg"
+                    alt="Birthday memory"
+                >
+
+            </div>
+
+            <p class="final-message">
+                Happy Birthday once again! 💕
+            </p>
+
+            <p class="small-final-message">
+                Keep smiling. Keep shining. ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
